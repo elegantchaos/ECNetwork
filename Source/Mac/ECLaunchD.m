@@ -8,14 +8,11 @@
 // --------------------------------------------------------------------------
 
 #import "ECLaunchD.h"
-#import "ECASLClient.h"
 
 #import <launch.h>
 #import <servers/bootstrap.h>
 
-// TODO - add proper ECLogging
-//#define ECDebug(c, ...) [[ECASLClient sharedInstance] log:__VA_ARGS__]
-#define ECDebug(...)
+ECDefineDebugChannel(LaunchdChannel);
 
 @implementation ECLaunchD
 
