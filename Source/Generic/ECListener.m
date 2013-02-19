@@ -53,7 +53,7 @@ ECDefineDebugChannel(ECListenerChannel);
 
 - (BOOL)start:(NSError**)error
 {
-	self.socket4 = [self newSocket:error ip4:YES];
+	self.socket4 = [self newSocket:error protocol:AF_INET];
 
 	if (self.socket4)
 	{
@@ -62,7 +62,7 @@ ECDefineDebugChannel(ECListenerChannel);
 		memcpy(&addr4, [addr bytes], [addr length]);
 		self.port = ntohs(addr4.sin_port);
 
-		self.socket6 = [self newSocket:error ip4:NO];
+		self.socket6 = [self newSocket:error protocol:AF_INET6];
 	}
 
 	return self.socket4 && self.socket6;
@@ -80,18 +80,19 @@ ECDefineDebugChannel(ECListenerChannel);
 	CFRelease(source);
 }
 
-- (CFSocketRef)newSocket:(NSError**)errorOut ip4:(BOOL)ip4
+- (CFSocketRef)newSocket:(NSError**)errorOut protocol:(SInt32)protocol
 {
 	NSError* error = nil;
+	BOOL useIPv4 = protocol == AF_INET;
 	CFSocketContext socketCtxt = {0, self, nil, nil, nil};
-	CFSocketRef socket = CFSocketCreate(kCFAllocatorDefault, ip4 ? AF_INET : AF_INET6, SOCK_STREAM, IPPROTO_TCP, kCFSocketAcceptCallBack, (CFSocketCallBack)&acceptConnection, &socketCtxt);
+	CFSocketRef socket = CFSocketCreate(kCFAllocatorDefault, protocol, SOCK_STREAM, IPPROTO_TCP, kCFSocketAcceptCallBack, (CFSocketCallBack)&acceptConnection, &socketCtxt);
 	if(socket) {
 		int yes = 1;
 		setsockopt(CFSocketGetNative(socket), SOL_SOCKET, SO_REUSEADDR, (void *)&yes, sizeof(yes));
 
 		NSData* address;
 
-		if (ip4)
+		if (useIPv4)
 		{
 			struct sockaddr_in addr4;
 			memset(&addr4, 0, sizeof(addr4));
@@ -118,7 +119,7 @@ ECDefineDebugChannel(ECListenerChannel);
 		}
 		else
 		{
-			error = [NSError errorWithDomain:ECNetworkErrorDomain code:ip4 ? ECNetworkErrorIPv4NotBound : ECNetworkErrorIPv6NotBound userInfo:nil];
+			error = [NSError errorWithDomain:ECNetworkErrorDomain code:(useIPv4 ? ECNetworkErrorIPv4NotBound : ECNetworkErrorIPv6NotBound) userInfo:nil];
 			CFRelease(socket);
 			socket = nil;
 		}
@@ -126,7 +127,7 @@ ECDefineDebugChannel(ECListenerChannel);
 
 	else
 	{
-		error = [NSError errorWithDomain:ECNetworkErrorDomain code:ip4 ? ECNetworkErrorIPv4SocketNotCreated : ECNetworkErrorIPv6SocketNotCreated userInfo:nil];
+		error = [NSError errorWithDomain:ECNetworkErrorDomain code:(useIPv4 ? ECNetworkErrorIPv4SocketNotCreated : ECNetworkErrorIPv6SocketNotCreated) userInfo:nil];
 	}
 
 	if (errorOut && error)

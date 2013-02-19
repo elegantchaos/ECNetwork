@@ -6,8 +6,9 @@
 
 #import "ECListener.h"
 #import <SenTestingKit/SenTestingKit.h>
+#import <ECUnitTests/ECUnitTests.h>
 
-@interface ECListenerTests : SenTestCase
+@interface ECListenerTests : ECTestCase
 
 @end
 
@@ -15,12 +16,22 @@
 
 - (void)testCreation
 {
+	__block BOOL connected = NO;
 	ECListener* listener = [[ECListener alloc] initWithConnectionHandler:^(NSInputStream *inputStream, NSOutputStream *outputStream) {
-
-		NSLog(@"connected");
+		connected = YES;
+		[self timeToExitRunLoop];
 	}];
 
 	STAssertTrue(listener.port > 0, @"should have had a port assigned");
+
+	// fake a network connection - it'll be enough to cause the listener to call its callback
+	NSURLRequest* request = [NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://localhost:%ld/", listener.port]]];
+	[NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse* response, NSData* data, NSError* error) {
+	}];
+
+	[self runUntilTimeToExit];
+	
+	STAssertTrue(connected, @"should have connected");
 
 	[listener release];
 }
