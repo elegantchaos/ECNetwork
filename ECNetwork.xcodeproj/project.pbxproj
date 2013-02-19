@@ -16,6 +16,14 @@
 		2204C6FE15E2739100F71E15 /* ECMachPorts.m in Sources */ = {isa = PBXBuildFile; fileRef = 2204C6F815E2739100F71E15 /* ECMachPorts.m */; };
 		2204C6FF15E2739100F71E15 /* ECUnixPorts.h in Headers */ = {isa = PBXBuildFile; fileRef = 2204C6F915E2739100F71E15 /* ECUnixPorts.h */; };
 		2204C70015E2739100F71E15 /* ECUnixPorts.m in Sources */ = {isa = PBXBuildFile; fileRef = 2204C6FA15E2739100F71E15 /* ECUnixPorts.m */; };
+		220D67DA16D4393F00276CD1 /* ECListener.h in Headers */ = {isa = PBXBuildFile; fileRef = 220D67D816D4393F00276CD1 /* ECListener.h */; };
+		220D67DB16D4393F00276CD1 /* ECListener.h in Headers */ = {isa = PBXBuildFile; fileRef = 220D67D816D4393F00276CD1 /* ECListener.h */; };
+		220D67DC16D4393F00276CD1 /* ECListener.m in Sources */ = {isa = PBXBuildFile; fileRef = 220D67D916D4393F00276CD1 /* ECListener.m */; };
+		220D67DD16D4393F00276CD1 /* ECListener.m in Sources */ = {isa = PBXBuildFile; fileRef = 220D67D916D4393F00276CD1 /* ECListener.m */; };
+		220D67E416D43D2300276CD1 /* ECNetworkError.h in Resources */ = {isa = PBXBuildFile; fileRef = 220D67E216D43D2300276CD1 /* ECNetworkError.h */; };
+		220D67E516D43D2300276CD1 /* ECNetworkError.h in Resources */ = {isa = PBXBuildFile; fileRef = 220D67E216D43D2300276CD1 /* ECNetworkError.h */; };
+		220D67E616D43D2300276CD1 /* ECNetworkError.m in Resources */ = {isa = PBXBuildFile; fileRef = 220D67E316D43D2300276CD1 /* ECNetworkError.m */; };
+		220D67E716D43D2300276CD1 /* ECNetworkError.m in Resources */ = {isa = PBXBuildFile; fileRef = 220D67E316D43D2300276CD1 /* ECNetworkError.m */; };
 		220D699915DC248300CCC17C /* ECConfig.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2251BBAD15DC1B4E00F2FE40 /* ECConfig.framework */; };
 		220D699A15DC248300CCC17C /* ECUnitTests.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2251BBA615DC18ED00F2FE40 /* ECUnitTests.framework */; };
 		220D699C15DC50CE00CCC17C /* ECUnitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2251BBA615DC18ED00F2FE40 /* ECUnitTests.framework */; };
@@ -57,6 +65,10 @@
 		2204C6F815E2739100F71E15 /* ECMachPorts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECMachPorts.m; sourceTree = "<group>"; };
 		2204C6F915E2739100F71E15 /* ECUnixPorts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECUnixPorts.h; sourceTree = "<group>"; };
 		2204C6FA15E2739100F71E15 /* ECUnixPorts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECUnixPorts.m; sourceTree = "<group>"; };
+		220D67D816D4393F00276CD1 /* ECListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECListener.h; sourceTree = "<group>"; };
+		220D67D916D4393F00276CD1 /* ECListener.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECListener.m; sourceTree = "<group>"; };
+		220D67E216D43D2300276CD1 /* ECNetworkError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file; path = ECNetworkError.h; sourceTree = "<group>"; };
+		220D67E316D43D2300276CD1 /* ECNetworkError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file; path = ECNetworkError.m; sourceTree = "<group>"; };
 		2229674F1354EDC5005F42E7 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		2237ECE314F5644C00085BF5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		223CBAE61205C6380008A641 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -217,6 +229,17 @@
 			name = Testing;
 			sourceTree = "<group>";
 		};
+		220D67D716D4392400276CD1 /* Generic */ = {
+			isa = PBXGroup;
+			children = (
+				220D67E216D43D2300276CD1 /* ECNetworkError.h */,
+				220D67E316D43D2300276CD1 /* ECNetworkError.m */,
+				220D67D816D4393F00276CD1 /* ECListener.h */,
+				220D67D916D4393F00276CD1 /* ECListener.m */,
+			);
+			path = Generic;
+			sourceTree = "<group>";
+		};
 		223CBAE11205C5930008A641 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -301,6 +324,7 @@
 			children = (
 				2251BA4215DBCD3900F2FE40 /* Configuration */,
 				2283A46414F53BCC009142F7 /* Mac */,
+				220D67D716D4392400276CD1 /* Generic */,
 				2283A4C814F53C6F009142F7 /* Prefix */,
 				2251BA6015DBD93700F2FE40 /* Tests */,
 			);
@@ -317,6 +341,7 @@
 				2204C6FB15E2739100F71E15 /* ECLaunchD.h in Headers */,
 				2204C6FD15E2739100F71E15 /* ECMachPorts.h in Headers */,
 				2204C6FF15E2739100F71E15 /* ECUnixPorts.h in Headers */,
+				220D67DA16D4393F00276CD1 /* ECListener.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,6 +349,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				220D67DB16D4393F00276CD1 /* ECListener.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -443,6 +469,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				220D67E416D43D2300276CD1 /* ECNetworkError.h in Resources */,
+				220D67E616D43D2300276CD1 /* ECNetworkError.m in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,6 +478,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				220D67E516D43D2300276CD1 /* ECNetworkError.h in Resources */,
+				220D67E716D43D2300276CD1 /* ECNetworkError.m in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -522,6 +552,7 @@
 				2204C6FC15E2739100F71E15 /* ECLaunchD.m in Sources */,
 				2204C6FE15E2739100F71E15 /* ECMachPorts.m in Sources */,
 				2204C70015E2739100F71E15 /* ECUnixPorts.m in Sources */,
+				220D67DC16D4393F00276CD1 /* ECListener.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -529,6 +560,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				220D67DD16D4393F00276CD1 /* ECListener.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
