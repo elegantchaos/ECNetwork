@@ -25,6 +25,8 @@
 		220D67F716D43F5400276CD1 /* ECNetworkError.h in Headers */ = {isa = PBXBuildFile; fileRef = 220D67F016D43F5400276CD1 /* ECNetworkError.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		220D67F816D43F5400276CD1 /* ECNetworkError.m in Sources */ = {isa = PBXBuildFile; fileRef = 220D67F116D43F5400276CD1 /* ECNetworkError.m */; };
 		220D67F916D43F5400276CD1 /* ECNetworkError.m in Sources */ = {isa = PBXBuildFile; fileRef = 220D67F116D43F5400276CD1 /* ECNetworkError.m */; };
+		220D67FC16D43FE000276CD1 /* ECListenerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 220D67FB16D43FE000276CD1 /* ECListenerTests.m */; };
+		220D67FD16D43FE000276CD1 /* ECListenerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 220D67FB16D43FE000276CD1 /* ECListenerTests.m */; };
 		220D699915DC248300CCC17C /* ECConfig.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2251BBAD15DC1B4E00F2FE40 /* ECConfig.framework */; };
 		220D699A15DC248300CCC17C /* ECUnitTests.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2251BBA615DC18ED00F2FE40 /* ECUnitTests.framework */; };
 		220D699C15DC50CE00CCC17C /* ECUnitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2251BBA615DC18ED00F2FE40 /* ECUnitTests.framework */; };
@@ -71,6 +73,7 @@
 		220D67EF16D43F5400276CD1 /* ECListener.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECListener.m; sourceTree = "<group>"; };
 		220D67F016D43F5400276CD1 /* ECNetworkError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECNetworkError.h; sourceTree = "<group>"; };
 		220D67F116D43F5400276CD1 /* ECNetworkError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECNetworkError.m; sourceTree = "<group>"; };
+		220D67FB16D43FE000276CD1 /* ECListenerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ECListenerTests.m; path = Generic/ECListenerTests.m; sourceTree = "<group>"; };
 		2229674F1354EDC5005F42E7 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		2237ECE314F5644C00085BF5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		223CBAE61205C6380008A641 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -275,6 +278,7 @@
 		2251BA6015DBD93700F2FE40 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				220D67FB16D43FE000276CD1 /* ECListenerTests.m */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -572,6 +576,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				220D67FC16D43FE000276CD1 /* ECListenerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -579,6 +584,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				220D67FD16D43FE000276CD1 /* ECListenerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
