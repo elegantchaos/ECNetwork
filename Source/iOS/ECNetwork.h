@@ -4,10 +4,5 @@
 //  liberal license: http://www.elegantchaos.com/license/liberal
 // --------------------------------------------------------------------------
 
-#define EC_NETWORK 1
-
-#ifdef __OBJC__
-
-#include <ECLogging/ECLogging.h>
-
-#endif
+#import "ECNetworkError.h"
+#import "ECListener.h"

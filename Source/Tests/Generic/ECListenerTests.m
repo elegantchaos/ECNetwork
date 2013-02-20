@@ -25,7 +25,7 @@
 	STAssertTrue(listener.port > 0, @"should have had a port assigned");
 
 	// fake a network connection - it'll be enough to cause the listener to call its callback
-	NSURLRequest* request = [NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://localhost:%ld/", listener.port]]];
+	NSURLRequest* request = [NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://localhost:%ld/", (long) listener.port]]];
 	[NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse* response, NSData* data, NSError* error) {
 	}];
 
