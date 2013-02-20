@@ -27,12 +27,10 @@
 		220D67FC16D43FE000276CD1 /* ECListenerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 220D67FB16D43FE000276CD1 /* ECListenerTests.m */; };
 		220D67FD16D43FE000276CD1 /* ECListenerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 220D67FB16D43FE000276CD1 /* ECListenerTests.m */; };
 		220D680016D444CD00276CD1 /* ECNetwork.h in Headers */ = {isa = PBXBuildFile; fileRef = 220D67FF16D444CD00276CD1 /* ECNetwork.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		220D680116D4488E00276CD1 /* ECLogging.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2204C5ED15E1536200F71E15 /* ECLogging.framework */; };
-		220D680216D4489400276CD1 /* ECConfig.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2251BBAD15DC1B4E00F2FE40 /* ECConfig.framework */; };
 		220D680316D4489400276CD1 /* ECConfig.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2251BBAD15DC1B4E00F2FE40 /* ECConfig.framework */; };
-		220D680616D4499100276CD1 /* ECNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2251BA1215DBCC4A00F2FE40 /* ECNetwork.framework */; };
-		220D680716D44CB300276CD1 /* ECNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2251B9FF15DBCC3E00F2FE40 /* ECNetwork.framework */; };
 		220D680916D44D0E00276CD1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 220D680816D44D0E00276CD1 /* UIKit.framework */; };
+		220D680C16D44EC800276CD1 /* ECNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 220D680B16D44EC800276CD1 /* ECNetwork.framework */; };
+		220D680D16D44F1700276CD1 /* ECLogging.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2204C5ED15E1536200F71E15 /* ECLogging.framework */; };
 		220D699915DC248300CCC17C /* ECConfig.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2251BBAD15DC1B4E00F2FE40 /* ECConfig.framework */; };
 		220D699A15DC248300CCC17C /* ECUnitTests.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2251BBA615DC18ED00F2FE40 /* ECUnitTests.framework */; };
 		220D699C15DC50CE00CCC17C /* ECUnitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2251BBA615DC18ED00F2FE40 /* ECUnitTests.framework */; };
@@ -77,6 +75,7 @@
 		220D67FB16D43FE000276CD1 /* ECListenerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ECListenerTests.m; path = Generic/ECListenerTests.m; sourceTree = "<group>"; };
 		220D67FF16D444CD00276CD1 /* ECNetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECNetwork.h; sourceTree = "<group>"; };
 		220D680816D44D0E00276CD1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		220D680B16D44EC800276CD1 /* ECNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ECNetwork.framework; path = "../../../../../../../../../../../../Caches/DerivedData/ECIntegration-fbajcwyruhnhxzgnphlhxaexutkp/Build/Products/Debug-iphonesimulator/ECNetwork.framework"; sourceTree = "<group>"; };
 		2251B9FF15DBCC3E00F2FE40 /* ECNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ECNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2251BA1215DBCC4A00F2FE40 /* ECNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ECNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2251BA1315DBCC4A00F2FE40 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
@@ -118,8 +117,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				220D680116D4488E00276CD1 /* ECLogging.framework in Frameworks */,
-				220D680216D4489400276CD1 /* ECConfig.framework in Frameworks */,
+				220D680D16D44F1700276CD1 /* ECLogging.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,9 +138,8 @@
 			files = (
 				220D680916D44D0E00276CD1 /* UIKit.framework in Frameworks */,
 				22339C3A15DEC1E30017BC6B /* ECUnitTests.framework in Frameworks */,
-				220D680716D44CB300276CD1 /* ECNetwork.framework in Frameworks */,
-				220D680616D4499100276CD1 /* ECNetwork.framework in Frameworks */,
 				2274B38E14F56896003B8A0B /* SenTestingKit.framework in Frameworks */,
+				220D680C16D44EC800276CD1 /* ECNetwork.framework in Frameworks */,
 				220D680316D4489400276CD1 /* ECConfig.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -165,6 +162,7 @@
 		0867D691FE84028FC02AAC07 /* ECFoundation */ = {
 			isa = PBXGroup;
 			children = (
+				220D680B16D44EC800276CD1 /* ECNetwork.framework */,
 				22BBB10114F646D20086974D /* Source */,
 				2274B37714F56679003B8A0B /* Resources */,
 				0867D69AFE84028FC02AAC07 /* Frameworks */,
@@ -583,6 +581,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2251BA4315DBCD3900F2FE40 /* IOSDebug.xcconfig */;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"/Caches/DerivedData/ECIntegration-fbajcwyruhnhxzgnphlhxaexutkp/Build/Products/Debug\"",
+				);
 			};
 			name = Debug;
 		};
@@ -590,6 +592,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2251BA4415DBCD3900F2FE40 /* IOSRelease.xcconfig */;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"/Caches/DerivedData/ECIntegration-fbajcwyruhnhxzgnphlhxaexutkp/Build/Products/Debug\"",
+				);
 			};
 			name = Release;
 		};
@@ -615,6 +621,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2251BA5C15DBD68500F2FE40 /* IOSUnitTestDebug.xcconfig */;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"/Caches/DerivedData/ECIntegration-fbajcwyruhnhxzgnphlhxaexutkp/Build/Products/Debug-iphonesimulator\"",
+				);
 				INFOPLIST_FILE = Resources/ECNetworkTests.plist;
 			};
 			name = Debug;
@@ -623,6 +633,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2251BA5D15DBD68500F2FE40 /* IOSUnitTestRelease.xcconfig */;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"/Caches/DerivedData/ECIntegration-fbajcwyruhnhxzgnphlhxaexutkp/Build/Products/Debug-iphonesimulator\"",
+				);
 				INFOPLIST_FILE = Resources/ECNetworkTests.plist;
 			};
 			name = Release;
