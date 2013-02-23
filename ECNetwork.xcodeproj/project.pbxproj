@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2204C5F015E1537C00F71E15 /* ECConfig.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2251BBAD15DC1B4E00F2FE40 /* ECConfig.framework */; };
 		2204C5F215E1537C00F71E15 /* ECLogging.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2204C5ED15E1536200F71E15 /* ECLogging.framework */; };
 		2204C6FB15E2739100F71E15 /* ECLaunchD.h in Headers */ = {isa = PBXBuildFile; fileRef = 2204C6F515E2739100F71E15 /* ECLaunchD.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2204C6FC15E2739100F71E15 /* ECLaunchD.m in Sources */ = {isa = PBXBuildFile; fileRef = 2204C6F615E2739100F71E15 /* ECLaunchD.m */; };
@@ -29,11 +28,9 @@
 		220D680016D444CD00276CD1 /* ECNetwork.h in Headers */ = {isa = PBXBuildFile; fileRef = 220D67FF16D444CD00276CD1 /* ECNetwork.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		220D680916D44D0E00276CD1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 220D680816D44D0E00276CD1 /* UIKit.framework */; };
 		220D680D16D44F1700276CD1 /* ECLogging.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2204C5ED15E1536200F71E15 /* ECLogging.framework */; };
-		220D699915DC248300CCC17C /* ECConfig.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2251BBAD15DC1B4E00F2FE40 /* ECConfig.framework */; };
-		220D699A15DC248300CCC17C /* ECUnitTests.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2251BBA615DC18ED00F2FE40 /* ECUnitTests.framework */; };
-		220D699C15DC50CE00CCC17C /* ECUnitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2251BBA615DC18ED00F2FE40 /* ECUnitTests.framework */; };
 		220D699D15DC510900CCC17C /* ECNetwork.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2251B9FF15DBCC3E00F2FE40 /* ECNetwork.framework */; };
 		2218F8BD16D95C73005AB648 /* ECNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2251B9FF15DBCC3E00F2FE40 /* ECNetwork.framework */; };
+		2218F8BE16D95D17005AB648 /* ECLogging.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2204C5ED15E1536200F71E15 /* ECLogging.framework */; };
 		2251BA0015DBCC3E00F2FE40 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2283A3BB14F52E93009142F7 /* Cocoa.framework */; };
 		2251BA6415DBD9A600F2FE40 /* ECNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2251B9FF15DBCC3E00F2FE40 /* ECNetwork.framework */; };
 		2268499E14F5720600B8691A /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2283A3CD14F52E93009142F7 /* SenTestingKit.framework */; };
@@ -49,8 +46,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				220D699D15DC510900CCC17C /* ECNetwork.framework in CopyFiles */,
-				220D699915DC248300CCC17C /* ECConfig.framework in CopyFiles */,
-				220D699A15DC248300CCC17C /* ECUnitTests.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,8 +80,6 @@
 		2251BA5E15DBD68500F2FE40 /* MacUnitTestDebug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = MacUnitTestDebug.xcconfig; sourceTree = "<group>"; };
 		2251BA5F15DBD68500F2FE40 /* MacUnitTestRelease.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = MacUnitTestRelease.xcconfig; sourceTree = "<group>"; };
 		2251BA6C15DBDA5100F2FE40 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2251BBA615DC18ED00F2FE40 /* ECUnitTests.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ECUnitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2251BBAD15DC1B4E00F2FE40 /* ECConfig.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ECConfig.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22552BC9134B9E5300B8894E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		225EC67211EBAA4800A97AEA /* ECNetworkMacTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ECNetworkMacTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2274B37814F56679003B8A0B /* ECNetworkTests.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ECNetworkTests.plist; sourceTree = "<group>"; };
@@ -104,7 +97,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2204C5F015E1537C00F71E15 /* ECConfig.framework in Frameworks */,
 				2204C5F215E1537C00F71E15 /* ECLogging.framework in Frameworks */,
 				2251BA0015DBCC3E00F2FE40 /* Cocoa.framework in Frameworks */,
 			);
@@ -122,7 +114,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				220D699C15DC50CE00CCC17C /* ECUnitTests.framework in Frameworks */,
+				2218F8BE16D95D17005AB648 /* ECLogging.framework in Frameworks */,
 				2251BA6415DBD9A600F2FE40 /* ECNetwork.framework in Frameworks */,
 				2268499F14F5722300B8691A /* Cocoa.framework in Frameworks */,
 				2268499E14F5720600B8691A /* SenTestingKit.framework in Frameworks */,
@@ -171,8 +163,6 @@
 			children = (
 				2204C5EC15E1536200F71E15 /* ECCore.framework */,
 				2204C5ED15E1536200F71E15 /* ECLogging.framework */,
-				2251BBAD15DC1B4E00F2FE40 /* ECConfig.framework */,
-				2251BBA615DC18ED00F2FE40 /* ECUnitTests.framework */,
 				223CBAE11205C5930008A641 /* System */,
 				2283A3BD14F52E93009142F7 /* Other Frameworks */,
 			);
@@ -597,6 +587,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2251BA5E15DBD68500F2FE40 /* MacUnitTestDebug.xcconfig */;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"/Caches/DerivedData/ECIntegration-fbajcwyruhnhxzgnphlhxaexutkp/Build/Products/Debug\"",
+				);
 				INFOPLIST_FILE = Resources/ECNetworkTests.plist;
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
 			};
@@ -606,6 +600,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2251BA5F15DBD68500F2FE40 /* MacUnitTestRelease.xcconfig */;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"/Caches/DerivedData/ECIntegration-fbajcwyruhnhxzgnphlhxaexutkp/Build/Products/Debug\"",
+				);
 				INFOPLIST_FILE = Resources/ECNetworkTests.plist;
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
 			};
