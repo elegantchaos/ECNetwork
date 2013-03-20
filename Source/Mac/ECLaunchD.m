@@ -16,9 +16,9 @@ ECDefineDebugChannel(LaunchdChannel);
 + (mach_port_t)bootstrapPortWithName:(NSString *)name
 {
     mach_port_t mp = 0;
-    mach_port_t bootstrap_port;
-    task_get_bootstrap_port(mach_task_self(), &bootstrap_port);
-    kern_return_t result = bootstrap_check_in(bootstrap_port, [name UTF8String], &mp);
+    mach_port_t port;
+    task_get_bootstrap_port(mach_task_self(), &port);
+    kern_return_t result = bootstrap_check_in(port, [name UTF8String], &mp);
     if (result != err_none)
     {
         ECDebug(LaunchdChannel, @"failed to get bootstrap port with error %d", result);

@@ -25,7 +25,7 @@
     socketAddress.sun_family = AF_UNIX;
     strcpy(socketAddress.sun_path,"/var/tmp/");
     strcat(socketAddress.sun_path,[name cStringUsingEncoding:NSASCIIStringEncoding]);
-    socketAddress.sun_len = SUN_LEN(&socketAddress);
+    socketAddress.sun_len = (unsigned char) SUN_LEN(&socketAddress);
     NSData* result = [NSData dataWithBytes:&socketAddress length:sizeof(socketAddress)];
     
     return result;

@@ -173,8 +173,8 @@ static void acceptConnection(CFSocketRef socket, CFSocketCallBackType type, CFDa
 	if (kCFSocketAcceptCallBack == type)
 	{
 		ECListener *listener = (id)info;
-		CFSocketNativeHandle socket = *(CFSocketNativeHandle *)data;
-		[listener acceptConnectionFromAddress:address onSocket:socket];
+		CFSocketNativeHandle nativeSocket = *(CFSocketNativeHandle *)data;
+		[listener acceptConnectionFromAddress:address onSocket:nativeSocket];
 	}
 
 	else
