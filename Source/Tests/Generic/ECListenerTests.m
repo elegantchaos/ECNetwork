@@ -6,7 +6,7 @@
 
 #import "ECListener.h"
 #import <SenTestingKit/SenTestingKit.h>
-#import <ECLogging/ECUnitTests.h>
+#import <ECUnitTests/ECUnitTests.h>
 
 @interface ECListenerTests : ECTestCase
 
