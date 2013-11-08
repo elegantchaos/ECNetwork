@@ -19,7 +19,6 @@
         NSMachPort *receivePort = [[NSMachPort alloc] initWithMachPort:mp];
         service = [NSConnection connectionWithReceivePort:receivePort sendPort:nil];
         [service setRootObject:root];
-        [receivePort release];
     }
     
     return service;

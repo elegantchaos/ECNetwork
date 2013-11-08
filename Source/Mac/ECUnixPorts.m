@@ -41,7 +41,7 @@
         result = [[NSSocketPort alloc] initRemoteWithProtocolFamily:AF_UNIX socketType:SOCK_STREAM protocol:0 address:data];
     }
 
-    return [result autorelease];
+    return result;
 }
 
 + (NSSocketPort*)serviceSocketWithName:(NSString*)name
@@ -49,7 +49,7 @@
     NSData* data = [self socketDataWithName:name];
 	NSSocketPort* result = [[NSSocketPort alloc] initWithProtocolFamily:AF_UNIX socketType:SOCK_STREAM protocol:0 address:data];
 
-    return [result autorelease];
+    return result;
 }
 
 @end
@@ -65,7 +65,6 @@
         NSSocketPort* receivePort = [[NSSocketPort alloc] initWithProtocolFamily:AF_UNIX socketType:SOCK_STREAM protocol:0 socket:socket];
         connection = [NSConnection connectionWithReceivePort:receivePort sendPort:nil];
         [connection setRootObject:root];
-		[receivePort release];
     }
     
     return connection;

@@ -34,7 +34,6 @@ ECDefineDebugChannel(ECListenerChannel);
 		if (![self start:&error])
 		{
 			ECDebug(ECListenerChannel, @"failed to start listener with error %@", error);
-			[self release];
 			self = nil;
 		}
 	}
@@ -45,10 +44,6 @@ ECDefineDebugChannel(ECListenerChannel);
 - (void)dealloc
 {
 	[self stop];
-
-	[_handler release];
-
-	[super dealloc];
 }
 
 - (BOOL)start:(NSError**)error
@@ -58,7 +53,7 @@ ECDefineDebugChannel(ECListenerChannel);
 	if (self.socket4)
 	{
 		struct sockaddr_in addr4;
-		NSData *addr = [(NSData *)CFSocketCopyAddress(self.socket4) autorelease];
+		NSData *addr = (__bridge_transfer NSData *)CFSocketCopyAddress(self.socket4);
 		memcpy(&addr4, [addr bytes], [addr length]);
 		self.port = ntohs(addr4.sin_port);
 
@@ -84,7 +79,7 @@ ECDefineDebugChannel(ECListenerChannel);
 {
 	NSError* error = nil;
 	BOOL useIPv4 = protocol == AF_INET;
-	CFSocketContext socketCtxt = {0, self, nil, nil, nil};
+	CFSocketContext socketCtxt = {0, (__bridge void*) self, nil, nil, nil};
 	CFSocketRef socket = CFSocketCreate(kCFAllocatorDefault, protocol, SOCK_STREAM, IPPROTO_TCP, kCFSocketAcceptCallBack, (CFSocketCallBack)&acceptConnection, &socketCtxt);
 	if(socket) {
 		int yes = 1;
@@ -113,7 +108,7 @@ ECDefineDebugChannel(ECListenerChannel);
 			address = [NSData dataWithBytes:&addr6 length:sizeof(addr6)];
 		}
 
-		if (kCFSocketSuccess == CFSocketSetAddress(socket, (CFDataRef)address))
+		if (kCFSocketSuccess == CFSocketSetAddress(socket, (__bridge CFDataRef)address))
 		{
 			[self setupRunLoopForSocket:socket];
 		}
@@ -150,7 +145,7 @@ ECDefineDebugChannel(ECListenerChannel);
 		CFReadStreamSetProperty(readStream, kCFStreamPropertyShouldCloseNativeSocket, kCFBooleanTrue);
 		CFWriteStreamSetProperty(writeStream, kCFStreamPropertyShouldCloseNativeSocket, kCFBooleanTrue);
 
-		self.handler((NSInputStream*)readStream, (NSOutputStream*)writeStream);
+		self.handler((__bridge NSInputStream*)readStream, (__bridge NSOutputStream*)writeStream);
 	}
 	else
 	{
@@ -172,7 +167,7 @@ static void acceptConnection(CFSocketRef socket, CFSocketCallBackType type, CFDa
 
 	if (kCFSocketAcceptCallBack == type)
 	{
-		ECListener *listener = (id)info;
+		ECListener *listener = (__bridge id)info;
 		CFSocketNativeHandle nativeSocket = *(CFSocketNativeHandle *)data;
 		[listener acceptConnectionFromAddress:address onSocket:nativeSocket];
 	}
