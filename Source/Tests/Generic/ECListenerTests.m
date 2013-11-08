@@ -22,7 +22,7 @@
 		[self timeToExitRunLoop];
 	}];
 
-	STAssertTrue(listener.port > 0, @"should have had a port assigned");
+	ECTestAssertTrue(listener.port > 0);
 
 	// fake a network connection - it'll be enough to cause the listener to call its callback
 	NSURLRequest* request = [NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://localhost:%ld/", (long) listener.port]]];
@@ -31,9 +31,7 @@
 
 	[self runUntilTimeToExit];
 	
-	STAssertTrue(connected, @"should have connected");
-
-	[listener release];
+	ECTestAssertTrue(connected);
 }
 
 @end
