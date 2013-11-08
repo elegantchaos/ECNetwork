@@ -39,6 +39,7 @@
 		2274B38E14F56896003B8A0B /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2283A3CD14F52E93009142F7 /* SenTestingKit.framework */; };
 		22C8B764182D34CD003EA301 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22C8B763182D34CD003EA301 /* XCTest.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		22C8B765182D34E1003EA301 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22C8B763182D34CD003EA301 /* XCTest.framework */; };
+		22C8B767182D3526003EA301 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22C8B766182D3526003EA301 /* UIKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -95,6 +96,7 @@
 		22970D3C14F5AA80007B254B /* ECNetworkDebug.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECNetworkDebug.pch; sourceTree = "<group>"; };
 		22970D3D14F5AA80007B254B /* ECNetworkRelease.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECNetworkRelease.pch; sourceTree = "<group>"; };
 		22C8B763182D34CD003EA301 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		22C8B766182D3526003EA301 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22C8B767182D3526003EA301 /* UIKit.framework in Frameworks */,
 				22C8B765182D34E1003EA301 /* XCTest.framework in Frameworks */,
 				2274B38E14F56896003B8A0B /* SenTestingKit.framework in Frameworks */,
 				2218F8BD16D95C73005AB648 /* ECNetwork.framework in Frameworks */,
@@ -169,6 +172,7 @@
 		0867D69AFE84028FC02AAC07 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				22C8B766182D3526003EA301 /* UIKit.framework */,
 				22C8B763182D34CD003EA301 /* XCTest.framework */,
 				220A160817710B6F00173510 /* ECUnitTests.framework */,
 				2204C5EC15E1536200F71E15 /* ECCore.framework */,
